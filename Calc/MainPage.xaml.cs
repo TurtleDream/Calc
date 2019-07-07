@@ -30,6 +30,7 @@ namespace Calc
         {
             this.InitializeComponent();
 			textBoxCalc.Text = "";
+			b = 0;
         }
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
@@ -97,6 +98,10 @@ namespace Calc
 		{
 			if((textBoxCalc.Text.Length != 0) && (textBoxCalc.Text != "-"))
 			{
+				if (a != 0)
+				{
+					BtnEqually_Click(sender, e);
+				}
 				a = float.Parse(textBoxCalc.Text);
 				textBoxCalc.Text = "";
 				count = 1;
@@ -109,6 +114,10 @@ namespace Calc
 			else if (textBoxCalc.Text.Equals("-")) textBoxCalc.Text = "";
 			else
 			{
+				if (a != 0)
+				{
+					BtnEqually_Click(sender, e);
+				}
 				a = float.Parse(textBoxCalc.Text);
 				textBoxCalc.Text = "";
 				count = 2;
@@ -119,6 +128,10 @@ namespace Calc
 		{
 			if((textBoxCalc.Text.Length != 0) && (!textBoxCalc.Text.Equals("-")))
 			{
+				if (a != 0)
+				{
+					BtnEqually_Click(sender, e);
+				}
 				a = float.Parse(textBoxCalc.Text);
 				textBoxCalc.Text = "";
 				count = 3;
@@ -129,6 +142,10 @@ namespace Calc
 		{
 			if ((textBoxCalc.Text.Length != 0) && (!textBoxCalc.Text.Equals("-")))
 			{
+				if (a != 0)
+				{
+					BtnEqually_Click(sender, e);
+				}
 				a = float.Parse(textBoxCalc.Text);
 				textBoxCalc.Text = "";
 				count = 4;
@@ -160,6 +177,8 @@ namespace Calc
 				default:
 					break;
 			}
+			a = 0;
+			count = 0;
 		}
 
 		private void Btn0_Click(object sender, RoutedEventArgs e)
